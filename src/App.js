@@ -21,10 +21,20 @@ function App() {
 		])
 	};
 
+	const removeItem= title => {
+		console.log({title});
+		setCart(
+			cart.filter((cartItem)=>{
+				console.log(cartItem);
+				return cartItem.title !== title;
+			})
+		)
+	}
+
 	return (
 		<div className="App">
 			<BookContext.Provider value={{products, addItem}}>
-			<CartContext.Provider value={cart}>
+			<CartContext.Provider value={{cart, removeItem}}>
 			<Navigation  />
 
 			{/* Routes */}
