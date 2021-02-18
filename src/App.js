@@ -19,6 +19,7 @@ function App() {
 		setCart([
 			...cart, item
 		])
+		localStorage.setItem("MyCart", JSON.stringify([...cart, item]))
 	};
 
 	const removeItem= title => {
